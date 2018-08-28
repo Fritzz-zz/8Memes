@@ -1,0 +1,498 @@
+<html>
+    <head>
+        <script src="jquery-3.3.1.js"></script>
+        
+        <title>Memes</title>
+        <style>
+            header{
+                width:100%;
+                height:50px;
+                box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+                background-image:url(https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/40056648_238418930178961_1714560732793667584_n.png?_nc_cat=0&oh=f99234a803812e3f80b0ebb79d5a99f6&oe=5C33201C);
+                display:flex;
+                flex-direction: row;
+                position: sticky;
+                top: 1px;
+            }
+            body{
+                margin:0;
+                background-color: #049CD8;
+                color : black;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            div.homearea{
+                font-size:25px;
+                margin-left: 0 px;
+                width:100px;
+                font-family: sans-serif;
+                display:flex;
+            }
+            div.loginarea{
+                float:right;
+                margin:10px;
+                display:flex;
+            }
+            div.searcharea{
+                margin: 10 auto;
+                width: 550px;
+                padding-left:0px;
+            }
+            div.titlearea{
+                float:left
+                margin:10px;
+                font-style:normal;
+                font-size: 40px;
+                color: #049CD8;
+                margin-left: 10px;
+                width:180px;
+                color: white;
+                background-image:url(https://static1.textcraft.net/data1/0/7/07ffabe5091c835c2e0f5cc6d34599e9256142a1da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd807096f70aa123194ca41f75d6ebf7f7bb1b3.png);
+            }
+            #home{
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+                margin-top:10px;
+                height:100%;
+            }
+            #home:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #about{
+                background-color: #43B047;
+                color: 	white;
+                padding: 11px 15px;
+                display: inline-block;
+                font-family: Arial Narrow, sans-serif;
+                margin-left:10px;
+                height: 100%;
+                border: none;
+                font-size:30px;
+                font-weight: bold;
+                
+            }
+            #about:hover {
+				background-color:#797979 ;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #submit {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+                height:50%;
+            }
+            #submit:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #login {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+            }
+            #login:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #signup {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+            }
+            #signup:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #chat_input{
+                width:400px;
+                height:30px;
+                margin-left:0px;
+            }
+            /*upload section*/
+            section.upload{
+                width:600px;
+                height:300px;
+                margin:1 auto;
+                background-color:#fafafa;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+                margin-top: 5px;
+                margin-bottom: 5px;
+                display:flex;
+                flex-direction: column;
+            }
+            div.uploadameme{
+                width:100%;
+                height:15px;
+                margin-top:10px;
+                font-family: Optima, sans-serif;
+                font-size:20px;
+                text-align: center;
+            }
+            #memetitleinputbox{
+                width:560px;
+                height:30px;
+                margin-top: 10px;
+                margin-left:20px;
+            }
+            div.memetitleinputarea{
+                width:100%;
+                height:50px;
+            }
+            div.uploadarea{
+                width:100%;
+                height:40px;
+            }
+            #choosefile {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-top:5px;
+                margin-left:20px;
+            }
+            #choosefile:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #filelocation {
+                color: #aaa;
+            }
+            #uploadmeme {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-top:5px;
+                margin-right:20px;
+                float:right;
+            }
+            #uploadmeme:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            div.memetagsinputarea{
+                width:100%;
+                height:50px;
+                display: flex;
+                flex-direction: row;
+            }
+            div.uploadtextcontainer{
+                padding-top:15;
+                padding-left:10;
+            }
+            #memetagsinputbox{
+                width:500px;
+                height:30px;
+                margin-top: 10px;
+                margin-left:35px;
+            }
+            div.memeshareinputarea{
+                width:100%;
+                height:70px;
+                margin-left: 10;
+                margin-top: 10
+            }
+            #memeshareinputbox{
+                width:500px;
+                height:30px;
+                margin-top: 10px;
+                margin-left:72px;
+            }
+            div.memepublicprivatearea{
+                width:100%;
+                height:50px;
+                display: flex;
+                flex-direction: row;
+            }
+            #publicprivatebox{
+                margin-top:9px;
+                margin-left:10px;
+                height:30px;
+            }
+            
+            /*memes section*/
+            section.memes{
+                width:600px;
+                height:100%;
+                margin:1 auto;
+                background-color:#ffc04c;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+            }
+            div.memebox{
+                border-bottom: 0.5px #E6ECF0 solid;
+                background-color:#ffc04c;
+                display:flex;
+                padding:10px;
+                transition-duration: 0.5s;
+                transition-property: all;
+                transition-timing-function: ease;
+                height:500px;
+                flex-direction: column;
+            }
+            div.posterusername{
+                color:#8e8e8e;
+                width:100%;
+            }
+            div.userwhopostedmemebox{
+                height:30px;
+                width:100%;
+                display:flex;
+                flex-direction: column;
+            }
+            div.memetitle{
+                height:30px;
+                width:100%;
+                text-align: center;
+                font-style:normal;
+                font-size: 20px;
+                color:#717171;
+            }
+            div.mememediabox{
+                height:350px;
+                width:100%;
+            }
+            div.memetagsarea{
+                width:100%;
+                height:25px;
+                margin-left:5;
+                padding:5px;
+                display: flex;
+                flex-direction: row;
+                font-family: Optima, sans-serif;
+                font-size:15px;
+            }
+            div.memetag{
+                margin:3px;
+                font-family: Optima, sans-serif;
+                font-size:20px;
+                color:darkgrey;
+            }
+            div.likesharearea{
+                width:100%;
+                height:40px;
+                margin-left:5;
+                padding:5px;
+                display: flex;
+
+            }
+            #likeinput {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+              
+                font-family: sans-serif;
+                margin-left:10px;
+                margin-bottom: 50px;
+            }
+            #likeinput:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            
+            #shareinput {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+               
+            }
+            #shareinput:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            .memeimage{
+                background-size: 100% 100%;        
+                margin-right:15px;      
+                border: 0.5px rgba(0,0,0,0.12);
+                height:350px;
+                width:100%;
+            }
+            div.commentsarea{
+                border-top: 1px #E6ECF0 solid;
+                background-color:#ffc04c;
+                display:flex;
+                padding:10px;
+                transition-duration: 0.5s;
+                transition-property: all;
+                transition-timing-function: ease;
+                height:100%;
+                flex-direction: column;
+            }
+            div.comment{
+                border-top: 1px #E6ECF0 solid;
+                background-color:#ffc04c;
+                display:flex;
+                padding:10px;
+                transition-duration: 0.5s;
+                transition-property: all;
+                transition-timing-function: ease;
+                height:40px;
+                flex-direction: column;
+            }
+            div.commenter{
+                height:20px;
+                color: black;
+            }
+            div.commentsinputarea{
+                border-top: 1px #E6ECF0 solid;
+                background-color:#efefef;
+                display:flex;
+                padding:10px;
+                transition-duration: 0.5s;
+                transition-property: all;
+                transition-timing-function: ease;
+                height:120px;
+                flex-direction: column;
+            }
+            #commentsinputarea{
+                display:flex;
+                height:120px;
+     
+            }
+            
+            #commentbox {
+                height: 90px;
+                margin-left: 30;
+                resize: none;
+                width: 420px;
+            }
+            #commentinput {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+                margin-bottom: 50px;
+            }
+            #commentinput:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            #memetitle{
+                height:30px;
+                width:100%;
+                text-align: center;
+                font-style:normal;
+                font-size: 20px;
+                color:#797979;
+                border: none;
+                background: none;
+            }
+            #memetitle:hover {
+				color:#3246e6;
+				font-weight:bold;
+            }
+            #user{
+                border: none;
+                background: none;
+                color:#8e8e8e;
+                font-size:18px;
+            }
+            #user:hover{
+                color:#3246e6;
+                font-weight:bold;
+            }
+        
+        </style>
+        <script>
+            
+            $(document).ready(() => {
+            $("button.memetitle").click(function(){  //use function instead of ()=> because "this" won't work
+                // get att data-id from the clicked button
+                var id = $(this).attr("data-id")
+                // place data-id into input
+                $("input#memetitleid").val(id)
+                //submit the form
+                $("form#memetitleform").submit()
+            })
+                
+                
+            });
+        </script>
+    
+    </head>
+    
+    <body>
+        <header>
+             <div class="titlearea"></div> 
+            <div class= "homearea">
+                <form action="home">
+                    <input type=image src="images\home.png" id="home">
+                </form>
+                <form action="about">
+                    <input type="submit" value="About" id="about">
+                </form>
+            </div>
+            <div class="searcharea" >
+                
+                <form action ="searchmeme" method="post">
+                    <input type="text" id="chat_input" name="searchmemeinput"/>
+                    <input type=image src="images\search.png" id="submit" required="required">
+                </form>
+                
+            </div>    
+            <div class="loginarea">
+                <form action="gotologin">
+                    <input type="submit" value="Log In" id="login">
+                </form>
+                <form action="gotosignup">
+                    <input type="submit" value="Sign Up" id="signup">
+                </form>
+            </div>
+        </header>
+        
+        <form id="memetitleform" action = "openmeme" method = "POST">
+            <input id="memetitleid" type="hidden" name = "id">
+        </form>
+        
+        <section class="memes">
+            {{#each memes}}
+            <div class = "memebox">
+                
+                <div class= "memetitle">
+                    <button id= "memetitle" class="memetitle" data-id ="{{_id}}">{{title}}</button>
+                </div>
+                
+                <div class= "mememediabox">
+                    <div><img src="images/{{image}}" class= "memeimage"> </div>
+                </div>
+                <div class= "userwhopostedmemebox">
+                    <form action="goprofile" method="post">
+                        <input type="text" value="{{poster}}" name="profile" hidden="hidden">
+                        <input type="submit" id="user" value="@{{poster}}">
+                    </form>
+                </div>
+                <div class = "memetagsarea">Tags: 
+                    <div class="memetag">{{tag}}</div>
+                </div>   
+                </div>
+            
+            {{/each}}
+            
+            <div class = "commentsarea">Comments:
+                {{#each comments}}
+                <div class= "comment"><div class= "commenter">{{commentposter}}</div>{{commenttext}}</div>
+                {{/each}}
+            </div>
+            
+        </section>
+    
+    </body>
+</html>

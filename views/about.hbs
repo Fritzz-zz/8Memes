@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <script src="jquery-3.3.1.js"></script>
+        
+        <title>About</title>
+        <style>
+            
+            header{
+                width:100%;
+                height:50px;
+                box-shadow: 0 1px 0px rgba(0,0,0,0.2);
+                background-image:url(https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.15752-9/40056648_238418930178961_1714560732793667584_n.png?_nc_cat=0&oh=f99234a803812e3f80b0ebb79d5a99f6&oe=5C33201C);
+                display:flex;
+                flex-direction: row;
+                position: sticky;
+                top: 1px;
+            }
+            body{
+                margin:0;
+                background-color: #049CD8;
+                color : black;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            div.homearea{
+                font-size:25px;
+                margin-left: 0 px;
+                width:100px;
+                font-family: sans-serif;
+                display:flex;
+            }
+
+            div.titlearea{
+                float:left
+                margin:10px;
+                font-style:normal;
+                font-size: 40px;
+                color: #049CD8;
+                margin-left: 10px;
+                width:180px;
+                color: white;
+                background-image:url(https://static1.textcraft.net/data1/0/7/07ffabe5091c835c2e0f5cc6d34599e9256142a1da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd807096f70aa123194ca41f75d6ebf7f7bb1b3.png);
+            }
+            #home{
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+                margin-top:10px;
+                height:100%;
+                font-size:30px;
+                font-weight: bold;
+                width: auto;
+                position: static;
+                left: auto;
+                
+            }
+            
+            #home:hover {
+				background-color:#797979 ;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+            
+                        div.usernamearea{
+                font-size:25px;
+                width:160px;
+                float:right;
+                display:flex;
+            }
+            #username{
+                background-color: #43B047;
+                color: 	white;
+                padding: 11px 15px;
+                display: inline-block;
+                font-family: Arial Narrow, sans-serif;
+                margin-left:10px;
+                height: 100%;
+                border: none;
+                font-size:30px;
+                font-weight: bold;
+            }
+            #username:hover {
+				background-color:#797979 ;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+
+            
+
+        #descriptionbox {
+            height: 60px;
+            margin-left: 30;
+            resize: none;
+        }
+
+        div.signInBox {
+            height: auto;
+            width: 400px;
+            background: #ffc04c;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -200px;
+            
+            border: 2px solid #0095ff;
+            padding: 10px;
+        }
+
+        h1 {
+            left: 100px;
+        }
+
+        label,
+        input {
+            display: block;
+            width: 150px;
+            float: left;
+            margin-bottom: 10px;
+        }
+
+        label {
+            text-align: right;
+            min-width: 100px;
+            padding-right: 20px;
+            top: 50%;
+            left: 50%;
+        }
+
+        input {
+            width: auto;
+            position: absolute;
+            left: 50%;
+
+        }
+
+        br {
+            clear: left;
+        }
+        h3{
+            text-align:center;    
+        }
+            label{
+                text-align:left;
+            }
+            
+                div.logoutarea{
+                float:right;
+                margin:10px;
+                display:flex;
+                text-align:right;
+            }
+            #logout {
+                background-color: #43B047;
+                color: white;
+                padding: 5px 15px;
+                display: inline-block;
+                font-family: sans-serif;
+                margin-left:10px;
+            }
+            #logout:hover {
+				background-color: #797979;
+				box-shadow: 0px 0px 2px rgba(30,30,30,0.3);
+            }
+
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="titlearea"></div>
+        <div class="homearea">
+                <form action="home">
+                    <input type=image src="images\home.png" id="home">
+                </form>
+        </div>
+
+    </header>
+
+        <div class="signInBox">
+            <h3>About</h3>
+            <label>NPM packages:</label>
+            <br>
+            <li>express</li>
+            <br>
+            <li>mongoose</li>
+            <br>
+            <li>hbs</li>
+            <br>
+            <li>bodyparser</li>
+            <br>
+            <li>path</li>
+            <br>
+            <li>cookieparser</li>
+            <br>
+            <li>session</li>
+            <br>
+            <li>crypto</li>
+        </div>
+
+
+</body>
+
+</html>
